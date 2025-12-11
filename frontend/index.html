@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Usage Analyzer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Application Usage Analyzer</h1>
+      <button id="reloadBtn" class="reload-btn">Reload Data</button>
+    </header>
+
+    <div class="filters-section">
+      <div class="filter-group">
+        <h2>Filter by Application</h2>
+        <div class="app-filter-controls">
+          <button id="selectAllApps" class="filter-control-btn">Select All</button>
+          <button id="deselectAllApps" class="filter-control-btn">Deselect All</button>
+        </div>
+        <div id="appFilters" class="app-filters"></div>
+      </div>
+
+      <div class="filter-group">
+        <h2>Filter by Date Range</h2>
+        <div class="date-filters">
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" />
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" />
+          <button id="applyFilters" class="apply-filters-btn">Apply Filters</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-container">
+      <h2>Total Usage Time by Application</h2>
+      <div id="appStats" class="app-stats"></div>
+    </div>
+
+    <div class="charts-container">
+      <div class="chart-wrapper">
+        <h2>Usage by Application (Pie Chart)</h2>
+        <canvas id="pieChart"></canvas>
+      </div>
+
+      <div class="chart-wrapper">
+        <h2>Daily Usage Timeline</h2>
+        <canvas id="timelineChart"></canvas>
+      </div>
+
+      <div class="chart-wrapper full-width">
+        <h2>Application Usage by Date</h2>
+        <canvas id="dateChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
